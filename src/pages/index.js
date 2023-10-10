@@ -1,4 +1,11 @@
-import { Banner, Button, Description, Logo, Typography } from "@/shared/ui";
+import {
+  Banner,
+  Button,
+  Description,
+  Logo,
+  Menu,
+  Typography,
+} from "@/shared/ui";
 
 export default function Home() {
   return (
@@ -7,6 +14,7 @@ export default function Home() {
 
       <Logo />
 
+      <Menu />
       <Banner>
         <Typography tag="h2">Excel Development Group</Typography>
         <Description>

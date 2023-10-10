@@ -1,0 +1,16 @@
+@import "reset";
+@import "variables";
+
+:root {
+  --accenct-color: #d93b32;
+  --grayscale-color: #3f4247;
+}
+
+@media screen and (max-width: $smDesktopWidth) {
+}
+
+@media screen and (max-width: $tableWidth) {
+}
+
+@media screen and (max-width: $phoneWidth) {
+}

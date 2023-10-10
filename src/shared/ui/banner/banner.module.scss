@@ -1,0 +1,17 @@
+.banner {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+}
+
+.text {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

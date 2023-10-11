@@ -1,27 +1,18 @@
-import {
-  Banner,
-  Button,
-  Description,
-  Logo,
-  Menu,
-  Typography,
-} from "@/shared/ui";
+import { Layout } from "@/shared/layout/layout";
+import { Banner, Button, Description, Typography } from "@/shared/ui";
 
 export default function Home() {
   return (
-    <div>
-      {/* <Button>Click To Call</Button> */}
-
-      <Logo />
-
-      <Menu />
+    <Layout>
       <Banner>
-        <Typography tag="h2">Excel Development Group</Typography>
-        <Description>
+        <Typography tag="h2" className="gap-20">
+          Excel Development Group
+        </Typography>
+        <Description className="gap-40">
           Innovate. Develop. Excel. The Essence of The Excel Group.
         </Description>
         <Button>Click to call</Button>
       </Banner>
-    </div>
+    </Layout>
   );
 }

@@ -1,6 +1,3 @@
-.burger {
-}
-
 .menuContainer {
   position: relative;
 }
@@ -15,16 +12,17 @@
   cursor: pointer;
   position: relative;
 }
+.close_button {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+}
 
 .burgerBar {
   width: 24px;
   height: 2px;
   background-color: #000;
   transition: transform 0.3s ease-in-out;
-}
-
-.open {
-  transform: rotate(0deg);
 }
 
 .menu {
@@ -38,37 +36,6 @@
   transition: left 0.3s ease-in-out;
 }
 
-.list {
-  display: flex;
-  margin: 0 auto;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-
 .open {
   left: 0;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-.menu a {
-  color: var(--accent-color);
-  font-family: var(--font-mont);
-  font-size: 62px;
-  font-style: normal;
-  font-weight: 200;
-  line-height: 74px;
-  transition: all 0.2s;
-}
-
-.menu a:hover {
-  font-weight: 500;
 }

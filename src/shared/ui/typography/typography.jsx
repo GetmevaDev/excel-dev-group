@@ -1,5 +1,4 @@
 import classNames from "classnames";
-
 import styles from "./typography.module.scss";
 
 const sizes = {
@@ -15,11 +14,7 @@ export const Typography = ({
   className,
 }) => {
   const Component = tag;
-  return (
-    <Component
-      className={classNames(styles.typography, className, sizes[size])}
-    >
-      {children}
-    </Component>
-  );
+  const classes = classNames(styles.typography, sizes[size], className);
+
+  return <Component className={classes}>{children}</Component>;
 };

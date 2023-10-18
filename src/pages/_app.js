@@ -1,5 +1,7 @@
 import "@/styles/globals.scss";
 import { Montserrat } from "@next/font/google";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export const mont = Montserrat({
   weight: ["300", "400", "500", "600", "700", "800", "900"],

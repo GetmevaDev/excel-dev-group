@@ -1,7 +1,14 @@
 .typography {
-  color: #fff;
   text-align: center;
   font-family: var(--font-mont);
+}
+
+.white {
+  color: #fff;
+}
+
+.black {
+  color: #171718;
 }
 
 .large {
@@ -16,4 +23,11 @@
   font-style: normal;
   font-weight: 500;
   line-height: 78px;
+}
+
+.small {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
 }

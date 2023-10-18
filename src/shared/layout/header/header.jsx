@@ -1,4 +1,4 @@
-import { Logo, Menu } from "@/shared/ui";
+import { Logo, Menu } from "@/shared/widgets";
 
 import styles from "./header.module.scss";
 

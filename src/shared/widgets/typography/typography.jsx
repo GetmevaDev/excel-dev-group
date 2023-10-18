@@ -7,14 +7,25 @@ const sizes = {
   large: styles.large,
 };
 
+const colors = {
+  white: styles.white,
+  black: styles.black,
+};
+
 export const Typography = ({
   tag = "h1",
   size = "medium",
+  color,
   children,
   className,
 }) => {
   const Component = tag;
-  const classes = classNames(styles.typography, sizes[size], className);
+  const classes = classNames(
+    styles.typography,
+    sizes[size],
+    className,
+    colors[color]
+  );
 
   return <Component className={classes}>{children}</Component>;
 };

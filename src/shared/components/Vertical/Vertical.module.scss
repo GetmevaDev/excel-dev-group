@@ -1,0 +1,35 @@
+@import "../../../styles/variables.scss";
+
+.vertical {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.title {
+  text-align: left;
+}
+
+.description {
+  font-family: var(--font-mont);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 34px;
+}
+
+.button {
+  margin-top: 10px;
+}
+
+@media (max-width: $phoneWidth) {
+  .vertical {
+    grid-template-columns: auto;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

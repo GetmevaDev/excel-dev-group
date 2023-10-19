@@ -8,6 +8,7 @@ import {
 } from "swiper/modules";
 import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
 import styles from "./Portfolio.module.scss";
+import { useRef } from "react";
 
 const list = [
   {
@@ -40,6 +41,8 @@ different color, to align with fridgeand full height cabinet (oven microwave).Bo
 ];
 
 export const Portfolio = () => {
+  const swiperRef = useRef(null);
+
   const [swiper, setSwiper] = useState(null);
   const [prevIndex, setPrevIndex] = useState(null);
 
@@ -63,7 +66,7 @@ export const Portfolio = () => {
         pagination={{
           clickable: true,
         }}
-        className="mySwiper"
+        className="portfolio"
         spaceBetween={100}
         onSwiper={(swiper) => {
           setSwiper(swiper);

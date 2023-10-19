@@ -5,6 +5,7 @@
   --accent-color: #d93b32;
   --grayscale-color: #3f4247;
   --grayscale-250: #d5d8de;
+  --grayscale-550: #727986;
   --layout-color: #f2f4f6;
   --bg-color: #171718;
   --grayscale-description: #a8adb8;
@@ -12,7 +13,7 @@
 
 .layout {
   margin: 0 auto;
-  max-width: 1230px;
+  max-width: 1250px;
   padding: 0 15px;
 }
 
@@ -28,45 +29,61 @@
   padding-bottom: 40px;
 }
 
-.swiper-container {
-  overflow: visible;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.slider-wrap {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  background: red;
-}
-
-.swiper-slide {
-  transition: all 0.3s ease !important;
-  display: flex !important;
-  align-items: center;
-  // width: 90vw !important;
-}
-
-.swiper-slide-prev,
-.swiper-slide-next {
-  opacity: 0.5;
-  transition: all 1s ease;
-  &:hover {
-    opacity: 1;
+.portfolio {
+  .swiper-container {
+    overflow: visible;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
   }
-}
 
-.mySwiper .swiper-slide-active {
-  transform: scaleX(1.1) !important;
-  transition: transform 0.3s ease;
+  .slider-wrap {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background: red;
+  }
+
+  .swiper-slide {
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center;
+    // width: 90vw !important;
+  }
+
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    opacity: 0.5;
+    transition: all 1s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .swiper-slide-active {
+    transform: scaleX(1.1) !important;
+    transition: transform 0.3s ease;
+  }
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+.swiper-vertical {
+  width: 100% !important;
+  height: 450px !important;
+}
+
+.vertical {
+  .swiper-container {
+    overflow: visible;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (max-width: $smDesktopWidth) {

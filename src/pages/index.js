@@ -1,14 +1,5 @@
-import { Overview, Portfolio } from "@/shared/components";
-import { Layout } from "@/shared/layout/layout";
-import { Banner } from "@/shared/widgets";
+import { HomeScreen } from "@/screens/HomeScreen/HomeScreen";
 
 export default function Home() {
-  return (
-    <Layout>
-      <Banner />
-      <Overview />
-
-      <Portfolio />
-    </Layout>
-  );
+  return <HomeScreen />;
 }

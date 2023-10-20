@@ -12,3 +12,18 @@
 .open {
   left: 0;
 }
+
+.logo {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

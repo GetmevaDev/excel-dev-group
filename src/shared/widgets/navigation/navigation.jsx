@@ -1,15 +1,19 @@
-import { Link } from "../link/link";
+import { Logo } from "..";
+import { LinkItem } from "../link/link";
 
 const list = [
   { id: 1, text: "Home", link: "/" },
-  { id: 2, text: "Portfoli", link: "/port" },
+  { id: 2, text: "Portfolio", link: "/portfoli" },
+  { id: 3, text: "Realty", link: "/realty" },
+  { id: 4, text: "About Us", link: "/about-us" },
+  { id: 5, text: "Contacts", link: "/contacts" },
 ];
 
 export const Navigation = () => {
   return (
     <>
       {list.map((item) => (
-        <Link key={item.id} {...item} />
+        <LinkItem key={item.id} {...item} />
       ))}
     </>
   );

@@ -11,3 +11,7 @@
 .link a:hover {
   font-weight: 500;
 }
+
+.link + .link {
+  padding-top: 30px;
+}

@@ -24,7 +24,9 @@
 
 @media (max-width: $phoneWidth) {
   .vertical {
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 50px;
   }
 
   .image {

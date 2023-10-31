@@ -1,12 +1,6 @@
 import { CardSlider, Typography } from "@/shared/widgets";
 import { useState } from "react";
-import {
-  Controller,
-  EffectCoverflow,
-  EffectFade,
-  Pagination,
-} from "swiper/modules";
-import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Portfolio.module.scss";
 import { useRef } from "react";
 
@@ -72,7 +66,16 @@ export const Portfolio = () => {
           setSwiper(swiper);
           setPrevIndex(swiper.realIndex);
         }}
-        breakpoints={{}}
+        breakpoints={{
+          720: {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+          },
+
+          320: {
+            slidesPerView: 1,
+          },
+        }}
       >
         {list?.map((item, index) => (
           <SwiperSlide key={item.id}>

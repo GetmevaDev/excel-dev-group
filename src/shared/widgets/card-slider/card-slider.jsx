@@ -8,7 +8,13 @@ import { useEffect } from "react";
 export const CardSlider = ({ id, title, description }) => {
   return (
     <div className={styles.card}>
-      <Image src="images/card.jpg" width={536} height={486} alt="card" />
+      <Image
+        src="images/card.jpg"
+        width={536}
+        height={486}
+        alt="card"
+        className={styles.image}
+      />
 
       <div className={styles.right}>
         <Typography

@@ -6,7 +6,15 @@ import React from "react";
 export const HomeScreen = () => {
   return (
     <Layout>
-      <Banner />
+      <Banner
+        width={1920}
+        height={720}
+        size="medium"
+        subTitle="Innovate. Develop. Excel. The Essence of The Excel Group."
+        button="Click to Call"
+        title="Excel Development Group"
+        image="/images/banner.jpg"
+      />
       <Overview />
       <Vertical />
       <Portfolio />

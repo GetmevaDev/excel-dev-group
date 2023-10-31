@@ -9,16 +9,30 @@ import classNames from "classnames";
 import "swiper/css";
 import "swiper/css/pagination";
 import { ArrowLeft } from "@/shared/svg/arrow-left";
+import { useMediaQuery } from "@/shared/hooks";
 export const Vertical = () => {
+  const isLarge = useMediaQuery("(min-width: 200px)");
+
   return (
     <section className={classNames("layout", styles.vertical)}>
       <Swiper
-        direction="vertical"
+        cssMode
+        direction={!isLarge ? "vertical" : "horizontal"}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
         className="vertical"
+        breakpoints={{
+          720: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+
+          320: {
+            slidesPerView: 1,
+          },
+        }}
       >
         <SwiperSlide>
           <Image

@@ -1,9 +1,9 @@
 import React from "react";
-
+import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Press.module.scss";
-import classNames from "classnames";
 import { Typography } from "@/shared/widgets";
 import { Card } from "./Card/Card";
+import { Navigation, Pagination } from "swiper/modules";
 
 export const Press = () => {
   return (
@@ -23,9 +23,35 @@ export const Press = () => {
         </div>
 
         <div className={styles.cards}>
-          <Card />
-          <Card />
-          <Card />
+          <Swiper
+            cssMode
+            slidesPerView={3}
+            spaceBetween={30}
+            modules={[Navigation]}
+            className="press"
+            breakpoints={{
+              720: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+
+              320: {
+                slidesPerView: 1,
+              },
+            }}
+          >
+            <SwiperSlide>
+              <Card />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <Card />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <Card />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
     </div>

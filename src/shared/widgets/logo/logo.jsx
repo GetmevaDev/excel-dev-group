@@ -1,9 +1,10 @@
 import Image from "next/image";
 import styles from "./logo.module.scss";
+import Link from "next/link";
 
 export const Logo = ({ width = 684, height = 254, alt = "logo" }) => {
   return (
-    <div className={styles.logo}>
+    <Link className={styles.logo} href="/">
       <Image
         src="/images/logo.svg"
         alt={alt}
@@ -11,6 +12,6 @@ export const Logo = ({ width = 684, height = 254, alt = "logo" }) => {
         height={height}
         className={styles.image}
       />
-    </div>
+    </Link>
   );
 };

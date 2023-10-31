@@ -39,4 +39,10 @@
   .image {
     object-fit: cover;
   }
+
+  .text,
+  .description,
+  .title {
+    text-align: left;
+  }
 }

@@ -1,1 +1,3 @@
-export * from "./use-dimesions";
+export * from "./useDimensions";
+export * from "./useEventListener";
+export * from "./useMediaQuery";

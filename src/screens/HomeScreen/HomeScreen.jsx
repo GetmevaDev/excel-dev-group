@@ -15,7 +15,12 @@ export const HomeScreen = () => {
         title="Excel Development Group"
         image="/images/banner.jpg"
       />
-      <Overview />
+      <Overview
+        direction="column"
+        title="Company Overview"
+        image="/images/overview.jpg"
+        text="Excel Group has revolutionized the iconic New York City skyline through an impressive collection of residential, office, mixed-use properties. The landmarks have not only elevated the status quo but also established new paradigms for the realm of development."
+      />
       <Vertical />
       <Portfolio />
       <Press />

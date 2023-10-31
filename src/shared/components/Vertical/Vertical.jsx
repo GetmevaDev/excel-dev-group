@@ -17,7 +17,7 @@ export const Vertical = () => {
     <section className={classNames("layout", styles.vertical)}>
       <Swiper
         cssMode
-        direction={!isLarge ? "vertical" : "horizontal"}
+        direction={isLarge ? "vertical" : "horizontal"}
         pagination={{
           clickable: true,
         }}
@@ -25,7 +25,7 @@ export const Vertical = () => {
         className="vertical"
         breakpoints={{
           720: {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
 

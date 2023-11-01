@@ -67,17 +67,6 @@
   }
 }
 
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.swiper-vertical {
-  width: 100% !important;
-  height: 450px !important;
-}
-
 .vertical {
   width: 100% !important;
 
@@ -85,6 +74,69 @@
     width: 100% !important;
     height: 100% !important;
   }
+}
+
+.press {
+  width: 100% !important;
+  height: 100% !important;
+
+  .swiper-slide {
+    width: 417px !important;
+    height: 100% !important;
+  }
+}
+
+.portfolio-slider {
+  width: 100% !important;
+  height: 100% !important;
+
+  .swiper-slide {
+    width: 100% !important;
+    height: 100% !important;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-pagination {
+    cursor: pointer;
+  }
+}
+
+.portfolio-swiper-button-prev {
+  background: rgba(23, 23, 24, 0.75);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  z-index: 9999;
+}
+
+.portfolio-swiper-button-next {
+  background: rgba(23, 23, 24, 0.75);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  position: absolute;
+  z-index: 9999;
+  right: 0px;
+  top: 50%;
+}
+
+.portfolio-swiper-button-next .swiper-button-disabled {
+  right: 20px !important;
+}
+
+.portfolio-slider-last-slide .portfolio-swiper-button-next {
+  right: inherit;
+  left: 0;
 }
 
 @media screen and (max-width: $smDesktopWidth) {

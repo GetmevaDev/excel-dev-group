@@ -27,6 +27,16 @@
   gap: 25px;
 }
 
+.arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.arrow {
+  padding: 14px;
+  border: 1px solid var(--grayscale-250);
+}
+
 @media (max-width: $phoneWidth) {
   .cards {
     grid-template-columns: auto;

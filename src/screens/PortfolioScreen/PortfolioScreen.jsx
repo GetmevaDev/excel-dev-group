@@ -28,6 +28,8 @@ export const PortfolioScreen = () => {
         image="/images/overview.jpg"
         text="Elegantly rising to eight stories, Vernon Tower, set in a sought-after location, showcases a striking grey and white terra-cotta façade. Of its 103 units, it includes 21 dedicated inclusionary homes, all boasting 9ft ceilings, floor-to-ceiling windows, and panoramic waterfront views."
       />
+
+      <Slider />
     </Layout>
   );
 };

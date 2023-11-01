@@ -1,57 +1,95 @@
-import { CardSlider } from "@/shared/widgets";
-import { list } from "..";
 import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
-import { useRef, useState } from "react";
 import Image from "next/image";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 
+import styles from "./Slider.module.scss";
+import { ChevronLeft } from "@/shared/svg/chevron-left";
+import { ChevronRight } from "@/shared/svg/chevron-right";
+import classNames from "classnames";
+
 export const Slider = ({}) => {
-  const swiperRef = useRef(null);
-
-  const [swiper, setSwiper] = useState(null);
-  const [prevIndex, setPrevIndex] = useState(null);
-
   return (
-    <>
-      <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 0, // added (Rotate of the prev and next slides)
-          depth: 200, // added (Depth of the prev and next slides)
-          stretch: 30, // added (Space between the slides)
-          modifier: 1, // added (Multiply the values of rotate, depth, and stretch)
-          scale: 1, // added (Size ratio of the prev and next slides)
-          slideShadows: false,
-        }}
-        pagination={{ el: ".swiper-pagination", clickable: true }}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-          clickable: true,
-        }}
-        modules={[EffectCoverflow, Pagination, Navigation]}
-        className="swiper_container--slider"
-      >
-        {list?.map((item, index) => (
-          <SwiperSlide key={item.id}>
-            <Image width={1075} height={620} src="/images/slider-1.jpg" />
+    <section className="layout">
+      <div className={styles.slider}>
+        <Swiper
+          effect="coverflow"
+          centeredSlides
+          watchOverflow
+          initialSlide={1}
+          spaceBetween={-120}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+          }}
+          slidesPerView="auto"
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Navigation, EffectCoverflow]}
+          navigation={{
+            nextEl: ".portfolio-swiper-button-next",
+            prevEl: ".portfolio-swiper-button-prev",
+          }}
+          className="portfolio-slider"
+        >
+          <SwiperSlide>
+            <Image
+              className={styles.image}
+              width={1075}
+              height={620}
+              src="/images/slider-1.jpg"
+              alt="img"
+            />
           </SwiperSlide>
-        ))}
-
-        <div className="slider-controler">
-          <div className="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
+          <SwiperSlide>
+            <Image
+              className={styles.image}
+              width={1075}
+              height={620}
+              src="/images/slider-2.jpg"
+              alt="img"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              className={styles.image}
+              width={1075}
+              height={620}
+              src="/images/slider-1.jpg"
+              alt="img"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              className={styles.image}
+              width={1075}
+              height={620}
+              src="/images/slider-2.jpg"
+              alt="img"
+            />
+          </SwiperSlide>
+        </Swiper>
+        <div className={styles.arrows}>
+          <div className="portfolio-swiper-button-prev">
+            <Image
+              src="/images/chevron-left.svg"
+              width={24}
+              height={24}
+              alt="left-arrow"
+            />
           </div>
-          <div className="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
+          <div className="portfolio-swiper-button-next">
+            <Image
+              src="/images/chevron-right.svg"
+              width={24}
+              height={24}
+              alt="right-arrow"
+            />
           </div>
-          <div className="swiper-pagination"></div>
         </div>
-      </Swiper>
-    </>
+      </div>
+    </section>
   );
 };

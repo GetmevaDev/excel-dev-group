@@ -33,6 +33,12 @@ export const Slider = ({ images }) => {
             prevEl: ".portfolio-swiper-button-prev",
           }}
           className="portfolio-slider"
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+          }}
         >
           {images?.map((item) => (
             <SwiperSlide key={item.id}>

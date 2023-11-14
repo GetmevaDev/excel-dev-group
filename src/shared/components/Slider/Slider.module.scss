@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .slider {
   margin-bottom: 120px;
   position: relative;
@@ -33,4 +35,11 @@
 .image {
   display: block;
   margin: 0 auto;
+}
+
+@media (max-width: $phoneWidth) {
+  .image {
+    width: 100%;
+    height: 210px;
+  }
 }

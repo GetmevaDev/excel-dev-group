@@ -9,8 +9,10 @@ export const Banner = ({
   size,
   button,
   image,
+  alt,
   width,
   height,
+  buttonPhone,
 }) => {
   return (
     <div className={styles.banner}>
@@ -19,7 +21,7 @@ export const Banner = ({
         src={image}
         width={width}
         height={height}
-        alt="banner"
+        alt={alt}
         className={styles.image}
       />
       <div className={styles.text}>
@@ -37,8 +39,8 @@ export const Banner = ({
           </Description>
         )}
         {button && (
-          <a href="tel: 123">
-            <Button>{button}</Button>
+          <a href={`tel: ${buttonPhone}`}>
+            <Button className={styles.tel}>{button}</Button>
           </a>
         )}
       </div>

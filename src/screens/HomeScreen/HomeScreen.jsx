@@ -3,27 +3,41 @@ import { Layout } from "@/shared/layout/layout";
 import { Banner } from "@/shared/widgets";
 import React from "react";
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ data }) => {
+  console.log(data, "data");
   return (
     <Layout>
       <Banner
         width={1920}
         height={720}
+        alt={data?.banner?.alt}
+        title={data?.banner?.title}
+        image={data?.banner?.image?.data?.attributes?.url}
         size="medium"
-        subTitle="Innovate. Develop. Excel. The Essence of The Excel Group."
-        button="Click to Call"
-        title="Excel Development Group"
-        image="/images/banner.jpg"
+        subTitle={data?.banner?.description}
+        button={data?.banner?.text_button}
+        buttonPhone={data?.banner?.text_button_phone}
       />
       <Overview
         direction="column"
-        title="Company Overview"
-        image="/images/overview.jpg"
-        text="Excel Group has revolutionized the iconic New York City skyline through an impressive collection of residential, office, mixed-use properties. The landmarks have not only elevated the status quo but also established new paradigms for the realm of development."
+        title={data?.block?.title}
+        image={data?.block?.image?.data?.attributes?.url}
+        text={data?.block?.description}
       />
-      <Vertical />
-      <Portfolio />
-      <Press />
+      <Vertical
+        slides={data?.SliderTeam?.slider}
+        title={data?.SliderTeam?.title}
+        description={data?.SliderTeam?.description}
+      />
+      <Portfolio
+        slides={data?.Portfolio?.Slider}
+        title={data?.Portfolio?.title}
+      />
+      <Press
+        slides={data?.PressNews?.Slider}
+        title={data?.PressNews?.title}
+        description={data?.PressNews?.description}
+      />
     </Layout>
   );
 };

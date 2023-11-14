@@ -102,34 +102,6 @@
   }
 }
 
-.portfolio-swiper-button-prev {
-  background: rgba(23, 23, 24, 0.75);
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
-  position: absolute;
-  top: 50%;
-  left: 0px;
-  z-index: 9999;
-}
-
-.portfolio-swiper-button-next {
-  background: rgba(23, 23, 24, 0.75);
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
-  position: absolute;
-  z-index: 9999;
-  right: 0px;
-  top: 50%;
-}
-
 .portfolio-swiper-button-next .swiper-button-disabled {
   right: 20px !important;
 }
@@ -148,8 +120,7 @@
 @media screen and (max-width: $phoneWidth) {
   .press {
     width: 100% !important;
-    height: 100% !important;
-    overflow: auto !important;
+    overflow: hidden !important;
 
     .swiper-slide {
       width: 100% !important;

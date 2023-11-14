@@ -7,7 +7,7 @@ import { ChevronLeft } from "@/shared/svg/chevron-left";
 import { ChevronRight } from "@/shared/svg/chevron-right";
 import classNames from "classnames";
 
-export const Slider = ({}) => {
+export const Slider = ({ images }) => {
   return (
     <section className="layout">
       <div className={styles.slider}>
@@ -34,42 +34,17 @@ export const Slider = ({}) => {
           }}
           className="portfolio-slider"
         >
-          <SwiperSlide>
-            <Image
-              className={styles.image}
-              width={1075}
-              height={620}
-              src="/images/slider-1.jpg"
-              alt="img"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              className={styles.image}
-              width={1075}
-              height={620}
-              src="/images/slider-2.jpg"
-              alt="img"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              className={styles.image}
-              width={1075}
-              height={620}
-              src="/images/slider-1.jpg"
-              alt="img"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              className={styles.image}
-              width={1075}
-              height={620}
-              src="/images/slider-2.jpg"
-              alt="img"
-            />
-          </SwiperSlide>
+          {images?.map((item) => (
+            <SwiperSlide key={item.id}>
+              <Image
+                className={styles.image}
+                width={1075}
+                height={620}
+                src={item?.image?.data?.attributes?.url}
+                alt="img"
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
         <div className={styles.arrows}>
           <div className="portfolio-swiper-button-prev">

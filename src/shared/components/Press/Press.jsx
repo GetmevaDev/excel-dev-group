@@ -9,22 +9,13 @@ import classNames from "classnames";
 import { ChevronLeft } from "@/shared/svg/chevron-left";
 import { ChevronRight } from "@/shared/svg/chevron-right";
 
-export const Press = () => {
+export const Press = ({ slides, title, description }) => {
   return (
     <div className={styles.press}>
       <div className="layout">
-        <Typography className={styles.title}>Press/News</Typography>
+        <Typography className={styles.title}>{title}</Typography>
 
-        <div className={styles.description}>
-          Our commitment to excellence, innovation, and transformative real
-          estate development has been featured in prominent publications, online
-          platforms, and industry-leading websites.As we continue to shape the
-          skyline and redefine cityscapes, we're grateful for the recognition
-          and grateful to the media for highlighting our journey. Explore the
-          stories that celebrate our dedication and vision, as we collaborate
-          with the press to create narratives that inspire, inform, and leave a
-          forever lasting impact.
-        </div>
+        <div className={styles.description}>{description}</div>
 
         <div className={styles.cards}>
           <Swiper
@@ -48,33 +39,26 @@ export const Press = () => {
               },
             }}
           >
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
-
-            <div className={styles.arrows}>
-              <div className={styles.arrow}>
-                <ChevronLeft
-                  className="review-swiper-button-prev"
-                  fill="#D93B32"
-                />
-              </div>
-              <div className={styles.arrow}>
-                <ChevronRight
-                  className="review-swiper-button-next"
-                  fill="#D93B32"
-                />
-              </div>
-            </div>
+            {slides?.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                <Card {...slide} />
+              </SwiperSlide>
+            ))}
           </Swiper>
+          <div className={styles.arrows}>
+            <div className={styles.arrow}>
+              <ChevronLeft
+                className="review-swiper-button-prev"
+                fill="#D93B32"
+              />
+            </div>
+            <div className={styles.arrow}>
+              <ChevronRight
+                className="review-swiper-button-next"
+                fill="#D93B32"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

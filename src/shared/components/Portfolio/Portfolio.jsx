@@ -3,38 +3,11 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Portfolio.module.scss";
 import { useRef } from "react";
+import { ChevronLeft } from "@/shared/svg/chevron-left";
+import { ChevronRight } from "@/shared/svg/chevron-right";
+import { Navigation } from "swiper/modules";
 
-const list = [
-  {
-    id: 1,
-    title: "Interior Design Presentation",
-    description: `Cabinets to extend all the way to the ceiling. Top upper cabinets tocontinue to be counter depth and
-different color, to align with fridgeand full height cabinet (oven microwave).Bottom of upper cabinets to be at normall 12’’ depth. Under cabinet lighting.`,
-  },
-
-  {
-    id: 2,
-    title: "Interior Design Presentation",
-    description: `Cabinets to extend all the way to the ceiling. Top upper cabinets tocontinue to be counter depth and
-different color, to align with fridgeand full height cabinet (oven microwave).Bottom of upper cabinets to be at normall 12’’ depth. Under cabinet lighting.`,
-  },
-
-  {
-    id: 3,
-    title: "Interior Design Presentation",
-    description: `Cabinets to extend all the way to the ceiling. Top upper cabinets tocontinue to be counter depth and
-different color, to align with fridgeand full height cabinet (oven microwave).Bottom of upper cabinets to be at normall 12’’ depth. Under cabinet lighting.`,
-  },
-
-  {
-    id: 4,
-    title: "Interior Design Presentation",
-    description: `Cabinets to extend all the way to the ceiling. Top upper cabinets tocontinue to be counter depth and
-different color, to align with fridgeand full height cabinet (oven microwave).Bottom of upper cabinets to be at normall 12’’ depth. Under cabinet lighting.`,
-  },
-];
-
-export const Portfolio = () => {
+export const Portfolio = ({ slides, title }) => {
   const swiperRef = useRef(null);
 
   const [swiper, setSwiper] = useState(null);
@@ -43,12 +16,13 @@ export const Portfolio = () => {
   return (
     <div className={styles.portfolio}>
       <Typography tag="h2" color="white" className={styles.title}>
-        Portfolio
+        {title}
       </Typography>
 
       <Swiper
         centeredSlides
         slidesPerView={1.5}
+        modules={[Navigation]}
         initialSlide={1}
         autoplay={{ delay: 1000 }}
         keyboard={{
@@ -60,8 +34,12 @@ export const Portfolio = () => {
         pagination={{
           clickable: true,
         }}
+        navigation={{
+          nextEl: ".portfolio-swiper-button-next",
+          prevEl: ".portfolio-swiper-button-prev",
+        }}
         className="portfolio"
-        spaceBetween={100}
+        spaceBetween={120}
         onSwiper={(swiper) => {
           setSwiper(swiper);
           setPrevIndex(swiper.realIndex);
@@ -77,12 +55,20 @@ export const Portfolio = () => {
           },
         }}
       >
-        {list?.map((item, index) => (
+        {slides?.map((item) => (
           <SwiperSlide key={item.id}>
             <CardSlider {...item} />
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className={styles.arrows}>
+        <div className={styles.arrow}>
+          <ChevronLeft className="portfolio-swiper-button-prev" fill="#fff" />
+        </div>
+        <div className={styles.arrow}>
+          <ChevronRight className="portfolio-swiper-button-next" fill="#fff" />
+        </div>
+      </div>
     </div>
   );
 };

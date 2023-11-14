@@ -5,4 +5,8 @@
   line-height: 42px;
   letter-spacing: 0em;
   text-align: center;
+
+  p + p {
+    padding-top: 20px;
+  }
 }

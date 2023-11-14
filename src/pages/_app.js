@@ -1,4 +1,6 @@
+import { client } from "@/graphql/apollo-client";
 import "@/styles/globals.scss";
+import { ApolloClient, ApolloProvider } from "@apollo/client";
 import { Montserrat } from "@next/font/google";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,7 +15,9 @@ export const mont = Montserrat({
 export default function App({ Component, pageProps }) {
   return (
     <main className={`${mont.variable} `}>
-      <Component {...pageProps} />
+      <ApolloProvider client={client}>
+        <Component {...pageProps} />
+      </ApolloProvider>
     </main>
   );
 }

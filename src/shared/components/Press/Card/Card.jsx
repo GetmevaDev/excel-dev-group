@@ -4,24 +4,44 @@ import styles from "./Card.module.scss";
 import Image from "next/image";
 import { Button } from "@/shared/widgets";
 import { ArrowLeft } from "@/shared/svg/arrow-left";
-export const Card = () => {
+import { truncateText } from "@/shared/utils/truncateText";
+import { useState } from "react";
+export const Card = ({ title, description, image, alt }) => {
+  const [isFullDescriptionVisible, setIsFullDescriptionVisible] =
+    useState(false);
+
   return (
     <div className={styles.press_card}>
       <Image
-        src="/images/press-card.jpg"
+        src={image?.data?.attributes?.url}
         width={416}
         className={styles.image}
         height={280}
-        alt="press"
+        alt={alt}
       />
 
       <div className={styles.bottom}>
-        <div className={styles.title}>title</div>
-        <p className={styles.description}>descrioption</p>
+        <div className={styles.title}>{truncateText(title, 60)}</div>
+        <p className={styles.description}>
+          {isFullDescriptionVisible ? description : description.slice(0, 100)}
+        </p>
 
-        <Button variant="text" svg={<ArrowLeft />}>
-          Read more
-        </Button>
+        {!isFullDescriptionVisible && description.length > 100 ? (
+          <Button
+            variant="text"
+            svg={<ArrowLeft />}
+            onClick={() => setIsFullDescriptionVisible(true)}
+          >
+            Read more
+          </Button>
+        ) : (
+          <Button
+            variant="text"
+            onClick={() => setIsFullDescriptionVisible(false)}
+          >
+            Hide
+          </Button>
+        )}
       </div>
     </div>
   );

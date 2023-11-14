@@ -5,14 +5,14 @@ import styles from "./card-slider.module.scss";
 import { useState } from "react";
 import { useEffect } from "react";
 
-export const CardSlider = ({ id, title, description }) => {
+export const CardSlider = ({ id, title, description, image, alt }) => {
   return (
     <div className={styles.card}>
       <Image
-        src="images/card.jpg"
+        src={image?.data?.attributes?.url}
         width={536}
         height={486}
-        alt="card"
+        alt={alt}
         className={styles.image}
       />
 

@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .title {
   padding: 100px 0 0;
 }
@@ -17,4 +19,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 25px;
+  padding-bottom: 100px;
+}
+
+@media (max-width: $phoneWidth) {
+  .cards {
+    grid-template-columns: auto;
+  }
 }

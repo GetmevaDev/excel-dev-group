@@ -21,11 +21,16 @@
 
 .arrow {
   padding: 14px;
+  display: none;
   border: 1px solid var(--accent-color);
 }
 
 @media (max-width: $phoneWidth) {
   .slider {
     padding: 0 30px;
+  }
+
+  .arrow {
+    display: block;
   }
 }

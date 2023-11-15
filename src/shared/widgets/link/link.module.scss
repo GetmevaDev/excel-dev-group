@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .link a {
   color: var(--accent-color);
   font-family: var(--font-mont);
@@ -14,4 +16,14 @@
 
 .link + .link {
   padding-top: 30px;
+}
+
+@media (max-width: $phoneWidth) {
+  .link a {
+    font-size: 25px;
+  }
+
+  .link + .link {
+    padding-top: 5px;
+  }
 }

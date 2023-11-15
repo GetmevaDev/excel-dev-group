@@ -4,7 +4,7 @@ import styles from "./sidebar.module.scss";
 
 export const Sidebar = ({ isOpen, toggle }) => {
   return (
-    <nav className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
+    <nav className={`${styles.sidebar} ${isOpen ? "open" : ""}`}>
       <div className={styles.logo}>
         <Logo width={200} height={75} />
       </div>

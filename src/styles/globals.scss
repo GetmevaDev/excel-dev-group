@@ -139,6 +139,11 @@
   left: 0;
 }
 
+.open {
+  left: 0 !important;
+  overflow: hidden !important;
+}
+
 @media screen and (max-width: $smDesktopWidth) {
 }
 

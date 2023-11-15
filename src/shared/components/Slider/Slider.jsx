@@ -36,7 +36,6 @@ export const Slider = ({ images }) => {
           breakpoints={{
             320: {
               slidesPerView: 1,
-              spaceBetween: 0,
             },
           }}
         >

@@ -4,7 +4,6 @@ import { Banner } from "@/shared/widgets";
 import React from "react";
 
 export const HomeScreen = ({ data }) => {
-  console.log(data, "data");
   return (
     <Layout>
       <Banner

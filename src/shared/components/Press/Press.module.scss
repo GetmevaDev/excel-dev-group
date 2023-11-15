@@ -34,11 +34,16 @@
 
 .arrow {
   padding: 14px;
+  display: none;
   border: 1px solid var(--grayscale-250);
 }
 
 @media (max-width: $phoneWidth) {
   .cards {
     grid-template-columns: auto;
+  }
+
+  .arrow {
+    display: block;
   }
 }

@@ -65,10 +65,10 @@ export const Portfolio = ({ slides, title }) => {
       </div>
       <div className={styles.arrows}>
         <div className={styles.arrow}>
-          <ChevronLeft className="portfolio-swiper-button-prev" fill="#fff" />
+          <ChevronLeft fill="#fff" />
         </div>
         <div className={styles.arrow}>
-          <ChevronRight className="portfolio-swiper-button-next" fill="#fff" />
+          <ChevronRight fill="#fff" />
         </div>
       </div>
     </div>

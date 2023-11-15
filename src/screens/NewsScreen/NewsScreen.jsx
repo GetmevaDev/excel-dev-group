@@ -19,9 +19,7 @@ export const NewsScreen = ({ data }) => {
         buttonPhone={data?.banner?.text_button_phone}
       />
 
-      <div className="layout">
-        <Cards data={data} />
-      </div>
+      <Cards data={data} />
     </Layout>
   );
 };

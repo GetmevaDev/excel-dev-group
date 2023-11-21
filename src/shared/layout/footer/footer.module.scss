@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .footer {
   background: var(--bg-color);
 }
@@ -85,4 +87,71 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.copyright_bottom {
+  display: none;
+}
+
+@media (max-width: $phoneWidth) {
+  .footer_inner {
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px 30px;
+  }
+
+  .copyright {
+    text-align: center;
+    display: none;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item {
+    padding: 16px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid var(--grayscale-700);
+  }
+
+  .locations ul {
+    padding-left: 20px;
+  }
+
+  .copyright_bottom {
+    display: block;
+    font-family: var(--font-mont);
+    font-size: 15px;
+    color: var(--grayscale-400);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    background: #000;
+
+    padding: 32px 100px;
+    text-align: center;
+  }
+
+  .item + .item {
+    margin-top: 7px;
+  }
+
+  .logo {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .left {
+    gap: 30px;
+  }
+
+  .right {
+    grid-template-columns: auto;
+    gap: 30px;
+  }
 }

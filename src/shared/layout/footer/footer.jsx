@@ -21,6 +21,7 @@ export const Footer = () => {
             src="/images/logo-white.svg"
             width={220}
             height={92}
+            className={styles.logo}
             alt="footer logo"
           />
           <div className={styles.copyright}>© 2023, all rights reserved</div>
@@ -78,6 +79,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
+      <div className={styles.copyright_bottom}>© 2023, all rights reserved</div>
     </footer>
   );
 };
